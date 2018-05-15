@@ -14,9 +14,13 @@ public class Solution {
      */
     static int[] solve(int a0, int a1, int a2, int b0, int b1, int b2) {
         /*
-         * Write your code here.
+         * This is my code
          */
+        //initially, Alice and  Bob have 0-point at first
         int a = 0, b = 0;
+        //if a0 of Alice is greater than Bob's, Alice will be rewarded 1 point.
+        //else if, Bob will be rewarded 1 point.
+        //else, nobody will be rewarded.
         if(a0>b0){
             a++;
         }else if (a0<b0){
