@@ -9,37 +9,19 @@ import java.util.regex.*;
 
 public class Solution {
 
-    /*
-     * Complete the solve function below.
-     */
-    static int[] solve(int a0, int a1, int a2, int b0, int b1, int b2) {
-        /*
-         * This is my code
-         */
+    static int[] solve(int[] arr1,  int[] arr2) {
+       
         //initially, Alice and  Bob have 0-point at first
         int a = 0, b = 0;
-        //if a0 of Alice is greater than Bob's, Alice will be rewarded 1 point.
-        //else if, Bob will be rewarded 1 point.
-        //else, nobody will be rewarded.
-        if(a0>b0){
-            a++;
-        }else if (a0<b0){
-            b++;
-        }else{ 
+        
+        for (int i = 0; i < arr1.length; i++){
+            if (arr1[i] > arr2[i]){
+                a++;
+            } else if (arr1[i] < arr2[i]) {
+                b++;
+            }
         }
-        if(a1>b1){
-            a++;
-        }else if (a1<b1){
-            b++;
-        }else{   
-        }
-         if(a2>b2){
-            a++;
-        }else if (a2<b2){
-            b++;
-        }else{
-            
-        }
+
         return new int[] {a,b};
     }
 
@@ -64,7 +46,10 @@ public class Solution {
 
         int b2 = Integer.parseInt(b0B1B2[2].trim());
 
-        int[] result = solve(a0, a1, a2, b0, b1, b2);
+        int[] arr1 = {a0,a1,a2};
+        int[] arr2 = {b0,b1,b2};
+
+        int[] result = solve(arr1, arr2);
 
         for (int resultItr = 0; resultItr < result.length; resultItr++) {
             bw.write(String.valueOf(result[resultItr]));
